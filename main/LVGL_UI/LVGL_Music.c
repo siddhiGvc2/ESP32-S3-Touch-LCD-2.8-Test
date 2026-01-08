@@ -528,7 +528,8 @@ void timer_cb(lv_timer_t * t)
   if(Music_Next_Flag){
     Music_Next_Flag = 0;                                      
     _lv_demo_music_album_next(true);  
-  }                 
+  }  
+ 
 }
 static lv_obj_t * panel;
 static lv_obj_t * slider;        
@@ -736,6 +737,7 @@ void _lv_demo_music_album_next(bool next)
   }
   _lv_demo_music_play(id);                                        
 }
+
 void _lv_demo_music_play(uint32_t id)
 {
   if(Playing_Flag && id == track_id){                             
