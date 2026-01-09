@@ -9,6 +9,7 @@
 #include "PCM5101.h"
 #include "LVGL_Music.h"
 #include "externVars.h"
+#include "vars.h"
 
 extern void console_uart_init(void);
 extern void CalculateTotalTracks (void);

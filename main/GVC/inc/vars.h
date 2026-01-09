@@ -1,4 +1,3 @@
-#include "defs.h"
 
 // vars for general
 
@@ -14,11 +13,11 @@ char SIPdateTime[100];
 char SIPuserName[100];
 char MIPdateTime[100];
 char MIPuserName[100];
-char SerialNumber[100];
+char SerialNumber[100] = "GVC/WS/0000";
 char ERASEdateTime[100];
 char ERASEuserName[100];
-char FWVersion[100];
-char FOTA_URL[200];
+char FWVersion[100] = "FW GVC 09JAN25";
+char FOTA_URL[200] = "http://gvcsystems.com/WS/firmware.bin";
 char WIFI_SSID_1[100];
 char WIFI_SSID_2[100];
 char WIFI_SSID_3[100];
@@ -62,7 +61,7 @@ int pulseWidth = 0;
 int SignalPolarity = 0;
 
 // vars for AAC
-extern int track_id,Total_Tracks,CurrentTrack;  
+// extern int track_id,Total_Tracks,CurrentTrack;  
 
 
 // vars for traffic

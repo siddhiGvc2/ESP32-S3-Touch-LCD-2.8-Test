@@ -1,17 +1,4 @@
-#include "ST7789.h"
-#include "PCF85063.h"
-#include "QMI8658.h"
-#include "SD_MMC.h"
-#include "Wireless.h"
-#include "LVGL_Example.h"
-#include "BAT_Driver.h"
-#include "PWR_Key.h"
-#include "PCM5101.h"
-#include "LVGL_Music.h"
-#include "driver/uart.h"
-#include "esp_log.h"
-#include "externVars.h"
-#include "calls.h"
+#include "defs.h"
 
 static QueueHandle_t uart0_queue;
 
@@ -53,8 +40,7 @@ void sendData(char* data)
 }
 
 void process_uart_packet(const char *pkt){
-     AnalyseGeneralCommands("UART",pkt);
-     AnalyseKwikpayCommands("UART",pkt);
+     AnalyseCommands("UART",pkt);
     
 }
 

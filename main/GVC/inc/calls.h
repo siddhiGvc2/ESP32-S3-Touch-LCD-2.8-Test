@@ -1,4 +1,13 @@
 extern void sendData(char*);
+extern void AnalyseCommands(char*,char*);
 extern void AnalyseGeneralCommands(char*,char*);
 extern void AnalyseKwikpayCommands(char*,char*);
+extern void AnalyseAACCommands(char*,char*);
+extern void AnalyseVendingCommands(char*,char*);
+extern void AnalyseWAMCommands(char*,char*);
 extern void PlayCurrentTrack();
+extern void SendReply(char*, char*);
+extern void SaveString(const char*, char*);
+extern void SaveInteger(const char*, int );
+extern void SetINHLow(void);
+extern void SetINHHigh(void);

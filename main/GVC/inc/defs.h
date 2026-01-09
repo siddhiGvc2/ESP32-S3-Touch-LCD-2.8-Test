@@ -1,3 +1,19 @@
+#include "ST7789.h"
+#include "PCF85063.h"
+#include "QMI8658.h"
+#include "SD_MMC.h"
+#include "Wireless.h"
+#include "LVGL_Example.h"
+#include "BAT_Driver.h"
+#include "PWR_Key.h"
+#include "LVGL_Music.h"
+#include "driver/uart.h"
+#include "esp_log.h"
+#include "externVars.h"
+#include "calls.h"
+
+
+
 #define EX_UART_NUM UART_NUM_2
 #define BUF_SIZE (1024)
 #define RD_BUF_SIZE (BUF_SIZE)
