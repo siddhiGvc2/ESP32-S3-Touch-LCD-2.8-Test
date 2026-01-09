@@ -1,7 +1,8 @@
+file(GLOB_RECURSE cfiles ".GVC/src/*.c")
 idf_component_register(
                          SRCS 
                               "./main.c" 
-                              "./GVC/uart.c"
+                              ${cfiles}
                               "./Audio_Driver/PCM5101.c" 
                               "./LCD_Driver/Vernon_ST7789T/Vernon_ST7789T.c" 
                               "./LCD_Driver/ST7789.c"
