@@ -1,4 +1,4 @@
-file(GLOB_RECURSE cfiles ".GVC/src/*.c")
+file(GLOB_RECURSE cfiles "./GVC/src/*.c")
 idf_component_register(
                          SRCS 
                               "./main.c" 

@@ -10,7 +10,9 @@
 #include "LVGL_Music.h"
 #include "driver/uart.h"
 #include "esp_log.h"
-#include "defs.h" 
+#include "externVars.h"
+#include "calls.h"
+
 static QueueHandle_t uart0_queue;
 
 
@@ -22,7 +24,6 @@ int track_id,Total_Tracks,CurrentTrack;
 
 
 void process_uart_packet(const char *);
-void sendData(char* data);
 char payload[200];
  
 
