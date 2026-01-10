@@ -41,6 +41,14 @@
 #define NVS_PW2_USERNAME     "USERNAME_PW2"
 #define NVS_PW2_DATETIME   "DATETIME_PW2"
 
+#define NVS_SSID_1_KEY        "SSID1"
+#define NVS_PASS_1_KEY        "PASS1"
+#define NVS_SSID_2_KEY        "SSID2"
+#define NVS_PASS_2_KEY        "PASS2"
+#define NVS_SSID_3_KEY        "SSID3"
+#define NVS_PASS_3_KEY        "PASS3"
+
+
 
 // kwikpay Defs
 #define MAXSIPNUMBER 3
