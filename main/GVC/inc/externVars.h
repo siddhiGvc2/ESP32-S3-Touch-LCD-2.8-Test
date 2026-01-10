@@ -1,4 +1,4 @@
-
+#include "defs.h"
 // vars for general
 
 // vars for kwikpay 
