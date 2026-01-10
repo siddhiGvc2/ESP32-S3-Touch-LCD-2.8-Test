@@ -24,6 +24,8 @@
 
 
 // kwikpay Defs
+#define MAXSIPNUMBER 3
+#define MAXMIPNUMBER 3
 #define NVS_INH_USERNAME "inh_username"
 #define NVS_INH_DATETIME "inh_datetime"
 #define NVS_INH_KEY "inh_key"
@@ -33,6 +35,13 @@
 #define NVS_CA_USERNAME "ca_username"
 #define NVS_CA_DATETIME "ca_datetime" 
 #define NVS_RST_USERNAME     "USERNAME_RST"
-#define NVS_RST_DATETIME   "DATETIME_RST"      
+#define NVS_RST_DATETIME   "DATETIME_RST"  
+#define NVS_SIP_USERNAME     "USERNAME_SIP"
+#define NVS_SIP_DATETIME   "DATETIME_SIP"
+
+  // added on 100525
+#define NVS_MIP_USERNAME     "USERNAME_MIP"
+#define NVS_MIP_DATETIME   "DATETIME_MIP"
+
 #define NVS_CA_KEY "ca_key"
      

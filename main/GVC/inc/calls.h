@@ -12,3 +12,4 @@ extern void SaveInteger(const char*, int );
 extern void SetINHLow(void);
 extern void SetINHHigh(void);
 extern void RestartDevice(void);
+extern void sendSocketData(void* sock, const char* data, size_t len, int flags);

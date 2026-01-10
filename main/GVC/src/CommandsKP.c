@@ -219,6 +219,142 @@ void AnalyseKwikpayCommands (char* InputVia, char* rx_buffer)
         RestartDevice();
 
     }
+    else if(strncmp(rx_buffer, "*SN:", 4) == 0){
+        if(strcmp(InputVia, "TCP") == 0 || strcmp(InputVia, "MQTT") == 0)
+        {
+            if (strstr(SerialNumber,"999999"))
+            {
+                sscanf(rx_buffer, "*SN:%[^:]:%[^:]:%[^#]#",SNuserName,SNdateTime,SerialNumber);
+                SaveString(NVS_SERIAL_NUMBER, SerialNumber);
+                SaveString(NVS_SN_USERNAME, SNuserName);
+                SaveString(NVS_SN_DATETIME, SNdateTime);
+                sendSocketData(sock, "*SN-OK#", strlen("*SN-OK#"), 0);
+            }
+            else
+            {
+               sendSocketData(sock, "*SN CAN NOT BE SET#", strlen("*SN CAN NOT BE SET#"), 0);
+
+            }
+                // tx_event_pending = 1; 
+        }
+        else if(strcmp(InputVia,"UART")==0)
+        {
+            sscanf(rx_buffer, "*SN:%[^#]#",SerialNumber);
+            strcpy(SNuserName, "LOCAL");
+            strcpy(SNdateTime, "00/00/00");
+            
+            SaveString(NVS_SERIAL_NUMBER, SerialNumber);
+            SaveString(NVS_SN_USERNAME,SNuserName);
+            SaveString(NVS_SN_DATETIME,SNdateTime);
+            
+        
+            SendReply("*SN-OK#",InputVia);
+            // tx_event_pending = 1;
+        }
+      
+  
+    }
+     else if(strncmp(rx_buffer, "*MIP:", 5) == 0){
+
+        if(strcmp(InputVia, "TCP") == 0 || strcmp(InputVia, "MQTT") == 0)
+        {
+            char tempUserName[64], tempDateTime[64], tempBuf[64] ,tempBuf2[64];
+
+            if (sscanf(rx_buffer, "*MIP:%[^:]:%[^:]:%[^:]#", tempUserName, tempDateTime, tempBuf) == 3) { 
+                  if (strlen(tempUserName) == 0 || strlen(tempDateTime) == 0 || strlen(tempBuf) == 0  ) {
+                    // Send error message if any required parameters are missing or invalid
+                    const char* errorMsg = "*Error: Missing or invalid parameters#";
+                    SendReply(errorMsg,InputVia);
+                }
+                else{
+
+                        strcpy(MIPuserName, tempUserName);
+                        strcpy(MIPdateTime, tempDateTime);
+                        MipNumber=atoi(tempBuf);
+                }
+           
+            }
+            else {
+                // Send error message if parsing failed
+                const char* errorMsg = "*Error: Invalid format#";
+                SendReply(errorMsg,InputVia);
+            }
+        }
+        else if(strcmp(InputVia, "UART") == 0)
+        {
+            sscanf(rx_buffer, "*MIP:%d#",&MipNumber);
+            strcpy(MIPuserName,"LOCAL");
+            strcpy(MIPdateTime,"00/00/00");
+        }
+      
+
+        if ((MipNumber == 0) || (MipNumber >MAXMIPNUMBER))  
+        {  
+            sprintf(payload, "*MIP-Error#");
+            ESP_LOGI(InputVia,"*MIP-ERROR#");
+        }else 
+        {
+            sprintf(payload, "*MIP-OK,%s,%s#",MIPuserName,MIPdateTime);                                                   
+            SaveInteger(NVS_MIP_NUMBER,  MipNumber);
+            SaveString(NVS_MIP_USERNAME, MIPuserName);
+            SaveString(NVS_MIP_DATETIME, MIPdateTime);
+            ESP_LOGI(InputVia,"*MIP-OK,%s,%s#",MIPuserName,MIPdateTime);
+        }    
+        SendReply(payload,InputVia);
+        SaveString(payload);
+       // tx_event_pending = 1;
+
+    }
+      else if(strncmp(rx_buffer, "*SIP:", 5) == 0){
+
+        if(strcmp(InputVia, "TCP") == 0 || strcmp(InputVia, "MQTT") == 0)
+        {
+            char tempUserName[64], tempDateTime[64], tempBuf[64] ,tempBuf2[64];
+
+            if (sscanf(rx_buffer, "*SIP:%[^:]:%[^:]:%[^:]#", tempUserName, tempDateTime, tempBuf) == 3) { 
+                  if (strlen(tempUserName) == 0 || strlen(tempDateTime) == 0 || strlen(tempBuf) == 0  ) {
+                    // Send error message if any required parameters are missing or invalid
+                    const char* errorMsg = "*Error: Missing or invalid parameters#";
+                    SendReply(errorMsg,InputVia);
+                }
+                else{
+                        strcpy(SIPuserName, tempUserName);
+                        strcpy(SIPdateTime, tempDateTime);
+                        SipNumber=atoi(tempBuf);
+                }
+           
+            }
+            else {
+                // Send error message if parsing failed
+                const char* errorMsg = "*Error: Invalid format#";
+                SendReply(errorMsg,InputVia);
+            }
+        }
+        else if(strcmp(InputVia, "UART") == 0)
+        {
+            sscanf(rx_buffer, "*SIP:%d#",&SipNumber);
+            strcpy(SIPuserName,"LOCAL");
+            strcpy(SIPdateTime,"00/00/00");
+        }
+      
+
+        if ((SipNumber == 0) || (SipNumber >MAXSIPNUMBER))  
+        {  
+            sprintf(payload, "*SIP-Error#");
+            ESP_LOGI(InputVia,"*SIP-ERROR#");
+        }else 
+        {
+            sprintf(payload, "*SIP-OK,%s,%s#",SIPuserName,SIPdateTime);                                                   
+            SaveInteger(NVS_SIP_NUMBER,  SipNumber);
+            SaveString(NVS_SIP_USERNAME, SIPuserName);
+            SaveString(NVS_SIP_DATETIME, SIPdateTime);
+            ESP_LOGI(InputVia,"*SIP-OK,%s,%s#",SIPuserName,SIPdateTime);
+        }    
+        SendReply(payload,InputVia);
+      
+       // tx_event_pending = 1;
+
+    }
      else if(strncmp(rx_buffer, "*TC?#", 5) == 0){
       
         sprintf(payload, "*TC,%s,%d,%d,%d,%d,%d,%d,%d#", 
