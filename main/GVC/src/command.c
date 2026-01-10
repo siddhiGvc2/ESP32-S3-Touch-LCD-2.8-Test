@@ -118,16 +118,7 @@ void AnalyseGeneralCommands (char* InputVia,char* rx_buffer) {
         sprintf(payload,"*MQTT3-OK,%s#",mqtt_uri3);
         SendReply(InputVia,payload);
     }
-    else if(strcmp(rx_buffer,"*MQTT3:",7)==0)
-    {
-        sscanf(rx_buffer,"*MQTT3:%[^:]:%[^#]#",mqtt_uri3,mqtt_user3,mqtt_pass3);
-        SaveString(NVS_MQTT3_URI, mqtt_uri3);
-        SaveString(NVS_MQTT3_USER, mqtt_user3);
-        SaveString(NVS_MQTT3_PASS, mqtt_pass3);
-        ESP_LOGI(InputVia,"Set MQTT3 URI to %s",mqtt_uri3);
-        sprintf(payload,"*MQTT3-OK,%s#",mqtt_uri3);
-        SendReply(InputVia,payload);
-    }
+    
     else if (strncmp(rx_buffer, "*ERASE?", 7) == 0){
         sprintf(payload,"*ERASE,%s,%s,%s#",ERASEuserName,ERASEdateTime,ErasedSerialNumber); 
         SendReply(InputVia, payload);
