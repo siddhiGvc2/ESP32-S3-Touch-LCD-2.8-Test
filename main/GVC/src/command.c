@@ -1,4 +1,4 @@
-#include "defs.h"
+#include "app.h"
 
 static const char *TAG = "COMMAND";
 

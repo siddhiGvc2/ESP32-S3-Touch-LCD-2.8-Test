@@ -1,4 +1,4 @@
-#include "defs.h"
+#include "app.h"
 
 void AnalyseKwikpayCommands (char* InputVia, char* rx_buffer)
 {

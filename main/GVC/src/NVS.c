@@ -1,4 +1,4 @@
-#include "defs.h"
+#include "app.h"
 
 void SaveInteger(const char* key, int value)
 {
