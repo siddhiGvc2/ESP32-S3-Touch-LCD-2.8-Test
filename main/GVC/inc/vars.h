@@ -59,6 +59,7 @@ int pin = 0; // output pin for Generating Pulses
 int pulses = 0; // number of pulses for generating pulses on output pin
 int Totals[7];
 int CashTotals[7];
+char UniqueTimeStamp[100];
 
 
     //  INHUserName:INHdateTime:INHOutputValue 

@@ -24,11 +24,14 @@
 
 
 //generaal
-
+#define NVS_UNIX_TS   "UNIX_TS"
 #define NVS_URL_USERNAME     "USERNAME_URL"
 #define NVS_URL_DATETIME   "DATETIME_URL"
 
   // added on 100525
+#define NVS_OTA_URL_KEY   "OTA_URL"
+#define NVS_SIP_USERNAME     "USERNAME_SIP"
+#define NVS_SIP_DATETIME   "DATETIME_SIP"
 #define NVS_MIP_USERNAME     "USERNAME_MIP"
 #define NVS_MIP_DATETIME   "DATETIME_MIP"
 #define NVS_SS_USERNAME     "USERNAME_SS"
@@ -60,6 +63,13 @@
 // kwikpay Defs
 #define MAXSIPNUMBER 3
 #define MAXMIPNUMBER 3
+#define NVS_CASH1_KEY   "CASH1"
+#define NVS_CASH2_KEY   "CASH2"
+#define NVS_CASH3_KEY   "CASH3"
+#define NVS_CASH4_KEY   "CASH4"
+#define NVS_CASH5_KEY   "CASH5"
+#define NVS_CASH6_KEY   "CASH6"
+#define NVS_CASH7_KEY   "CASH7"
 #define NVS_INH_USERNAME "inh_username"
 #define NVS_INH_DATETIME "inh_datetime"
 #define NVS_INH_KEY "inh_key"

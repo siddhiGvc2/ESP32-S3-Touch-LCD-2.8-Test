@@ -62,6 +62,7 @@ extern int pin; // output pin for Generating Pulses
 extern int pulses; // number of pulses for generating pulses on output pin
 extern int Totals[7];
 extern int CashTotals[7];
+extern char UniqueTimeStamp[100];
 
 extern char INHuserName[100];
 extern char INHdateTime[100];
