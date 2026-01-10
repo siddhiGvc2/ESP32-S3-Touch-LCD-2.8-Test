@@ -54,6 +54,16 @@ int TCP1_server_port;
 int TCP2_server_port;
 int TCP3_server_port;
 
+char mqtt_uri1[100];
+char mqtt_user1[100];
+char mqtt_pass1[100];
+char mqtt_uri2[100];
+char mqtt_user2[100];
+char mqtt_pass2[100];
+char mqtt_uri3[100];
+char mqtt_user3[100];
+char mqtt_pass3[100];
+
 
 // kwikpay
 // edges , AckPulseReceived, TID, LastTID, pin, pulses, tx_event_pending, Totals[]

@@ -56,6 +56,17 @@ extern char TCP3_ip_addr[100];
 extern int TCP1_server_port;
 extern int TCP2_server_port;
 extern int TCP3_server_port;
+
+extern char mqtt_uri1[100];
+extern char mqtt_user1[100];
+extern char mqtt_pass1[100];
+extern char mqtt_uri2[100];
+extern char mqtt_user2[100];
+extern char mqtt_pass2[100];
+extern char mqtt_uri3[100];
+extern char mqtt_user3[100];
+extern char mqtt_pass3[100];
+
     // vars for kwikpay
     // kwikpay
     // edges , AckPulseReceived, TID, LastTID, pin, pulses, tx_event_pending, Totals[]
