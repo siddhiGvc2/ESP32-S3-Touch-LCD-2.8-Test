@@ -8,3 +8,8 @@ void SetINHHigh(void)
 {
 
 }
+
+void RestartDevice(void)
+{
+
+}

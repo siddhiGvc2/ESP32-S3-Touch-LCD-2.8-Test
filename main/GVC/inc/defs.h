@@ -31,6 +31,8 @@
 #define NVS_PT_DATETIME "pt_datetime"   
 #define NVS_PASS_THRU "pass_thru"
 #define NVS_CA_USERNAME "ca_username"
-#define NVS_CA_DATETIME "ca_datetime"       
+#define NVS_CA_DATETIME "ca_datetime" 
+#define NVS_RST_USERNAME     "USERNAME_RST"
+#define NVS_RST_DATETIME   "DATETIME_RST"      
 #define NVS_CA_KEY "ca_key"
      

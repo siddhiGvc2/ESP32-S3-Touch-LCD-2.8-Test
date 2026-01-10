@@ -11,3 +11,4 @@ extern void SaveString(const char*, char*);
 extern void SaveInteger(const char*, int );
 extern void SetINHLow(void);
 extern void SetINHHigh(void);
+extern void RestartDevice(void);

@@ -197,6 +197,28 @@ void AnalyseKwikpayCommands (char* InputVia, char* rx_buffer)
             SaveInteger(NVS_CASH7_KEY, CashTotals[6]);
 
     }
+    else if(strncmp(rx_buffer, "*RST", 4) == 0){
+        if(strcmp(InputVia, "TCP") == 0 || strcmp(InputVia, "MQTT") == 0)
+        {
+            sscanf(rx_buffer, "*RST:%[^:]:%[^#]#",RSTuserName,RSTdateTime);
+        }
+        else if(strcmp(InputVia,"UART")==0)
+        {
+            strcpy(RSTuserName,"LOCAL");
+            strcpy(RSTdateTime,"00/00/00");
+        }
+       
+       
+        ESP_LOGI(InputVia, "**************Restarting after 3 second*******");
+        SaveString(NVS_RST_USERNAME, RSTuserName);
+        SaveString(NVS_RST_DATETIME, RSTdateTime);
+        sprintf(payload, "*RST-OK,%s,%s#",RSTuserName,RSTdateTime);
+        SendReply(payload,InputVia);
+        ESP_LOGI(InputVia, "*RST-OK#");
+        SendReply(InputVia,"*Resetting device#");
+        RestartDevice();
+
+    }
      else if(strncmp(rx_buffer, "*TC?#", 5) == 0){
       
         sprintf(payload, "*TC,%s,%d,%d,%d,%d,%d,%d,%d#", 
