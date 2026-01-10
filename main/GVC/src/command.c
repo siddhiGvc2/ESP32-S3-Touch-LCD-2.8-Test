@@ -428,7 +428,7 @@ void AnalyseGeneralCommands (char* InputVia,char* rx_buffer) {
 
            // Format the success message and send it
            sprintf(payload, "*PW-OK,%s,%s#", PWuserName, PWdateTime);
-           SendResponse(payload,InputVia);
+           SendReply(payload,InputVia);
           // tx_event_pending = 1;
 
     }
