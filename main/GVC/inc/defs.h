@@ -24,6 +24,13 @@
 
 
 //generaal
+
+#define NVS_URL_USERNAME     "USERNAME_URL"
+#define NVS_URL_DATETIME   "DATETIME_URL"
+
+  // added on 100525
+#define NVS_MIP_USERNAME     "USERNAME_MIP"
+#define NVS_MIP_DATETIME   "DATETIME_MIP"
 #define NVS_SS_USERNAME     "USERNAME_SS"
 #define NVS_SS_DATETIME   "DATETIME_SS"
 #define NVS_PW_USERNAME     "USERNAME_PW"
@@ -65,10 +72,9 @@
 #define NVS_RST_DATETIME   "DATETIME_RST"  
 #define NVS_SIP_USERNAME     "USERNAME_SIP"
 #define NVS_SIP_DATETIME   "DATETIME_SIP"
+#define NVS_CC_USERNAME     "USERNAME_CC"
+#define NVS_CC_DATETIME   "DATETIME_CC"
 
-  // added on 100525
-#define NVS_MIP_USERNAME     "USERNAME_MIP"
-#define NVS_MIP_DATETIME   "DATETIME_MIP"
 
 #define NVS_CA_KEY "ca_key"
      
