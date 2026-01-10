@@ -7,6 +7,21 @@ char URLdateTime[100];
 char URLuserName[100];
 char SSdateTime[100];
 char SSuserName[100];
+char PWdateTime[100];
+char PWuserName[100];
+
+char SS1dateTime[100];
+char SS1userName[100];
+
+char PW1dateTime[100];
+char PW1userName[100];
+
+char SS2dateTime[100];
+char SS2userName[100];
+
+char PW2dateTime[100];
+char PW2userName[100];
+
 char SIPdateTime[100];
 char SIPuserName[100];
 char MIPdateTime[100];

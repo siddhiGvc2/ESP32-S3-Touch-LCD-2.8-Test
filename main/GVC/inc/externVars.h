@@ -6,8 +6,25 @@ extern char SNdateTime[100];
 extern char SNuserName[100];
 extern char URLdateTime[100];
 extern char URLuserName[100];
+
 extern char SSdateTime[100];
 extern char SSuserName[100];
+
+extern char PWdateTime[100];
+extern char PWuserName[100];
+
+extern char SS1dateTime[100];
+extern char SS1userName[100];
+
+extern char PW1dateTime[100];
+extern char PW1userName[100];
+
+extern char SS2dateTime[100];
+extern char SS2userName[100];
+
+extern char PW2dateTime[100];
+extern char PW2userName[100];
+
 extern char SIPdateTime[100];
 extern char SIPuserName[100];
 extern char MIPdateTime[100];

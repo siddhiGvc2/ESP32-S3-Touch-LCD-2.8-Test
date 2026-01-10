@@ -257,6 +257,268 @@ void AnalyseGeneralCommands (char* InputVia,char* pkt) {
        // tx_event_pending = 1;
 
     }
+    else if(strncmp(rx_buffer, "*SS:", 4) == 0){
+        if(strcmp(InputVia, "TCP") == 0 || strcmp(InputVia, "MQTT") == 0)
+        {
+            char tempUserName[64], tempDateTime[64], tempBuf[64];
+
+            // Parse the input buffer
+            if (sscanf(rx_buffer, "*SS:%[^:]:%[^:]:%[^#]#", tempUserName, tempDateTime, tempBuf) == 3) {
+                // Check if any of the parsed values are empty
+                if (strlen(tempUserName) == 0 || strlen(tempDateTime) == 0 || strlen(tempBuf) == 0) {
+                    // Send error message if any required parameters are missing or invalid
+                    const char* errorMsg = "*Error: Missing or invalid parameters#";
+                    SendReply(errorMsg,InputVia);
+                } else {
+                    // Copy parsed values to the actual variables
+                    strcpy(SSuserName, tempUserName);
+                    strcpy(SSdateTime, tempDateTime);
+                    strcpy(WIFI_SSID_1, tempBuf);
+                }
+            }
+            else {
+                // Send error message if parsing failed
+                const char* errorMsg = "*Error: Invalid format#";
+                SendReply(errorMsg,InputVia);
+            }
+        }
+        else if(strcmp(InputVia, "UART") == 0)
+        {
+            sscanf(rx_buffer, "*SS:%[^#]#",WIFI_SSID_1);
+            strcpy(SSuserName,"LOCAL");
+            strcpy(SSdateTime,"00/00/00");
+        }
+    
+           // Save the values to non-volatile storage
+           SaveString(NVS_SSID_1_KEY, WIFI_SSID_1);
+           SaveString(NVS_SS_USERNAME, SSuserName);
+           SaveString(NVS_SS_DATETIME, SSdateTime);
+
+           // Format the success message and send it
+           sprintf(payload, "*SS-OK,%s,%s#", SSuserName, SSdateTime);
+           SendReply(payload,InputVia);
+          // tx_event_pending = 1;
+
+    }
+    else if(strncmp(rx_buffer, "*SS1:", 5) == 0){
+        if(strcmp(InputVia, "TCP") == 0 || strcmp(InputVia, "MQTT") == 0)
+        {
+            char tempUserName[64], tempDateTime[64], tempBuf[64];
+
+            // Parse the input buffer
+            if (sscanf(rx_buffer, "*SS1:%[^:]:%[^:]:%[^#]#", tempUserName, tempDateTime, tempBuf) == 3) {
+                // Check if any of the parsed values are empty
+                if (strlen(tempUserName) == 0 || strlen(tempDateTime) == 0 || strlen(tempBuf) == 0) {
+                    // Send error message if any required parameters are missing or invalid
+                    const char* errorMsg = "*Error: Missing or invalid parameters#";
+                    SendReply(errorMsg,InputVia);
+                } else {
+                    // Copy parsed values to the actual variables
+                    strcpy(SS1userName, tempUserName);
+                    strcpy(SS1dateTime, tempDateTime);
+                    strcpy(WIFI_SSID_2, tempBuf);
+                }
+            }
+            else {
+                // Send error message if parsing failed
+                const char* errorMsg = "*Error: Invalid format#";
+                SendReply(errorMsg,InputVia);
+            }
+        }
+        else if(strcmp(InputVia, "UART") == 0)
+        {
+            sscanf(rx_buffer, "*SS1:%[^#]#",WIFI_SSID_2);
+            strcpy(SS1userName,"LOCAL");
+            strcpy(SS1dateTime,"00/00/00");
+        }
+       
+
+           // Save the values to non-volatile storage
+           SaveString(NVS_SSID_2_KEY, WIFI_SSID_2);
+           SaveString(NVS_SS1_USERNAME, SS1userName);
+           SaveString(NVS_SS1_DATETIME, SS1dateTime);
+
+           // Format the success message and send it
+           sprintf(payload, "*SS1-OK,%s,%s#", SS1userName, SS1dateTime);
+           SendReply(payload,InputVia);
+          // tx_event_pending = 1;
+
+    }
+    else if(strncmp(rx_buffer, "*SS2:", 5) == 0){
+        if(strcmp(InputVia, "TCP") == 0 || strcmp(InputVia, "MQTT") == 0)
+        {
+            char tempUserName[64], tempDateTime[64], tempBuf[64];
+
+            // Parse the input buffer
+            if (sscanf(rx_buffer, "*SS2:%[^:]:%[^:]:%[^#]#", tempUserName, tempDateTime, tempBuf) == 3) {
+                // Check if any of the parsed values are empty
+                if (strlen(tempUserName) == 0 || strlen(tempDateTime) == 0 || strlen(tempBuf) == 0) {
+                    // Send error message if any required parameters are missing or invalid
+                    const char* errorMsg = "*Error: Missing or invalid parameters#";
+                    SendReply(errorMsg,InputVia);
+                } else {
+                    // Copy parsed values to the actual variables
+                    strcpy(SS2userName, tempUserName);
+                    strcpy(SS2dateTime, tempDateTime);
+                    strcpy(WIFI_SSID_3, tempBuf);
+                }
+            }
+            else {
+                // Send error message if parsing failed
+                const char* errorMsg = "*Error: Invalid format#";
+                SendReply(errorMsg,InputVia);
+            }
+        }
+        else if(strcmp(InputVia, "UART") == 0)
+        {
+            sscanf(rx_buffer, "*SS2:%[^#]#",WIFI_SSID_3);
+            strcpy(SS2userName,"LOCAL");
+            strcpy(SS2dateTime,"00/00/00");
+        }
+       
+
+           // Save the values to non-volatile storage
+           SaveString(NVS_SSID_3_KEY, WIFI_SSID_3);
+           SaveString(NVS_SS2_USERNAME, SS2userName);
+           SaveString(NVS_SS2_DATETIME, SS2dateTime);
+
+           // Format the success message and send it
+           sprintf(payload, "*SS2-OK,%s,%s#", SS2userName, SS2dateTime);
+           SendReply(payload,InputVia);
+          // tx_event_pending = 1;
+
+    }
+    else if(strncmp(rx_buffer, "*PW:", 4) == 0){
+        if(strcmp(InputVia, "TCP") == 0 || strcmp(InputVia, "MQTT") == 0)
+        {
+            char tempUserName[64], tempDateTime[64], tempBuf[64];
+
+            // Parse the input buffer
+            if (sscanf(rx_buffer, "*PW:%[^:]:%[^:]:%[^#]#", tempUserName, tempDateTime, tempBuf) == 3) {
+                // Check if any of the parsed values are empty
+                if (strlen(tempUserName) == 0 || strlen(tempDateTime) == 0 || strlen(tempBuf) == 0) {
+                    // Send error message if any required parameters are missing or invalid
+                    const char* errorMsg = "Error: Missing or invalid parameters";
+                    SendReply(errorMsg,InputVia);
+                } else {
+                    // Copy parsed values to the actual variables
+                    strcpy(PWuserName, tempUserName);
+                    strcpy(PWdateTime, tempDateTime);
+                    strcpy(WIFI_PASS_1, tempBuf);
+                }
+            }
+            else {
+                // Send error message if parsing failed
+                const char* errorMsg = "Error: Invalid format";
+                SendReply(errorMsg,InputVia);
+            }
+        }
+        else if(strcmp(InputVia, "UART") == 0)
+        {
+            sscanf(rx_buffer, "*PW:%[^#]#",WIFI_PASS_1);
+            strcpy(PWuserName,"LOCAL");
+            strcpy(PWdateTime,"00/00/00");
+        }
+      
+
+           // Save the values to non-volatile storage
+           SaveString(NVS_PASS_1_KEY, WIFI_PASS_1);
+           SaveString(NVS_PW_USERNAME, PWuserName);
+           SaveString(NVS_PW_DATETIME, PWdateTime);
+
+           // Format the success message and send it
+           sprintf(payload, "*PW-OK,%s,%s#", PWuserName, PWdateTime);
+           SendResponse(payload,InputVia);
+          // tx_event_pending = 1;
+
+    }
+    else if(strncmp(rx_buffer, "*PW1:", 5) == 0){
+        if(strcmp(InputVia, "TCP") == 0 || strcmp(InputVia, "MQTT") == 0)
+        {
+            char tempUserName[64], tempDateTime[64], tempBuf[64];
+
+            // Parse the input buffer
+            if (sscanf(rx_buffer, "*PW1:%[^:]:%[^:]:%[^#]#", tempUserName, tempDateTime, tempBuf) == 3) {
+                // Check if any of the parsed values are empty
+                if (strlen(tempUserName) == 0 || strlen(tempDateTime) == 0 || strlen(tempBuf) == 0) {
+                    // Send error message if any required parameters are missing or invalid
+                    const char* errorMsg = "*Error: Missing or invalid parameters#";
+                    SendReply(errorMsg,InputVia);
+                } else {
+                    // Copy parsed values to the actual variables
+                    strcpy(PW1userName, tempUserName);
+                    strcpy(PW1dateTime, tempDateTime);
+                    strcpy(WIFI_PASS_2, tempBuf);
+                }
+            }
+            else {
+                // Send error message if parsing failed
+                const char* errorMsg = "Error: Invalid format";
+                SendReply(errorMsg,InputVia);
+            }
+        }
+        else if(strcmp(InputVia, "UART") == 0)
+        {
+            sscanf(rx_buffer, "*PW1:%[^#]#",WIFI_PASS_2);
+            strcpy(PW1userName,"LOCAL");
+            strcpy(PW1dateTime,"00/00/00");
+        }
+        
+           // Save the values to non-volatile storage
+           SaveString(NVS_PASS_2_KEY, WIFI_PASS_2);
+           SaveString(NVS_PW1_USERNAME, PW1userName);
+           SaveString(NVS_PW1_DATETIME, PW1dateTime);
+
+           // Format the success message and send it
+           sprintf(payload, "*PW1-OK,%s,%s#", PW1userName, PW1dateTime);
+           SendReply(payload,InputVia);
+          // tx_event_pending = 1;
+
+    }
+    else if(strncmp(rx_buffer, "*PW2:", 5) == 0){
+        if(strcmp(InputVia, "TCP") == 0 || strcmp(InputVia, "MQTT") == 0)
+        {
+            char tempUserName[64], tempDateTime[64], tempBuf[64];
+
+            // Parse the input buffer
+            if (sscanf(rx_buffer, "*PW2:%[^:]:%[^:]:%[^#]#", tempUserName, tempDateTime, tempBuf) == 3) {
+                // Check if any of the parsed values are empty
+                if (strlen(tempUserName) == 0 || strlen(tempDateTime) == 0 || strlen(tempBuf) == 0) {
+                    // Send error message if any required parameters are missing or invalid
+                    const char* errorMsg = "Error: Missing or invalid parameters";
+                    SendReply(errorMsg,InputVia);
+                } else {
+                    // Copy parsed values to the actual variables
+                    strcpy(PW2userName, tempUserName);
+                    strcpy(PW2dateTime, tempDateTime);
+                    strcpy(WIFI_PASS_3, tempBuf);
+                }
+            }
+            else {
+                // Send error message if parsing failed
+                const char* errorMsg = "Error: Invalid format";
+                SendReply(errorMsg,InputVia);
+            }
+        }
+        else if(strcmp(InputVia, "UART") == 0)
+        {
+            sscanf(rx_buffer, "*PW2:%[^#]#",WIFI_PASS_3);
+            strcpy(PW2userName,"LOCAL");
+            strcpy(PW2dateTime,"00/00/00");
+        }
+    
+
+           // Save the values to non-volatile storage
+           SaveString(NVS_PASS_3_KEY, WIFI_PASS_3);
+           SaveString(NVS_PW2_USERNAME, PW2userName);
+           SaveString(NVS_PW2_DATETIME, PW2dateTime);
+
+           // Format the success message and send it
+           sprintf(payload, "*PW2-OK,%s,%s#", PW2userName, PW2dateTime);
+           SendReply(payload,InputVia);
+           //tx_event_pending = 1;
+
+    }
 }
 
 void AnalyseCommands (char* InputVia,char* pkt) {
