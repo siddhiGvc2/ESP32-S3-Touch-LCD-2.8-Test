@@ -208,7 +208,7 @@ void AnalyseWAMCommands (char* InputVia,char* rx_buffer) {
             // tx_event_pending = 1;
         }
        }
-       else if(UartDebugInfo){
+       else{
         if(extractSubstring(rx_buffer, buf) == true){
             sprintf(payload, "*%s#", buf);
            SendReply(InputVia,payload);
