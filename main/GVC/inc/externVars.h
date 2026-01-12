@@ -129,7 +129,7 @@ extern int GameMode;
 extern int max_count;
 extern int current_count;
 extern int life_count;
-extern int fileToBeRun=0;
+extern int fileToBeRun;
 extern uint64_t current_time_us; 
 extern uint32_t elapsed_ms,last_elapsed_ms,last_audio_ms;
 extern int SoundMode;  // 0 - off, 1 - on, 2 - on with sound, 3 - on with sound and vibration                        
