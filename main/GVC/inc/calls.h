@@ -1,3 +1,14 @@
+//uart
+extern void uart_write_string(const char *);
+extern void uart_write_string_ln(const char *);
+extern void uart_write_number(uint8_t);
+
+
+//GSM
+extern void gsm_write_string(const char *);
+extern void gsm_write_string_ln(const char *);
+
+
 extern void sendData(char*);
 extern void AnalyseCommands(char*,char*);
 extern void AnalyseGeneralCommands(char*,char*);
@@ -53,3 +64,21 @@ extern void DisplayMaxLights(void);
 extern void DisplayOTP (void);
 extern void DisplayNormal (void);
 extern bool extractSubstring(const char* , char* );
+
+
+//mqtt
+extern void mqtt_publish_msg(char* );
+
+//TFT
+extern void display_images(const lv_img_dsc_t *);
+extern void showLogo(void);
+extern void DisplayBootingUp(void);
+extern void DisplayNoWiFi(void);
+extern void dispayQR(void);
+extern void DisplayCashReceived(void);
+extern void DisplaySelectItem(void);
+extern void DisplayItemVend(void);
+extern void DisplayCashlessDevice(void);
+extern void DisplayNoStock(void);
+extern void DisplayStatusText(void);
+extern void DisplayCoinInserted(void);

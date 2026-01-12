@@ -124,3 +124,7 @@
 
 #define MaximumSettingNumber 8
 
+
+//Vending
+#define NVS_QR_STRING   "QR_STRING"
+

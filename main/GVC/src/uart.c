@@ -128,3 +128,22 @@ void console_uart_init(void){
 //    uart_set_pin(EX_UART_NUM, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
     xTaskCreate(uart_event_task, "uart_event_task", 4096, NULL, 6, NULL);
 }
+
+void uart_write_string_ln(const char * str){
+    if (UartDebugInfoRequired)
+    {
+        ESP_LOGI(TAG,"To UART : %s",str);
+        uart_write_bytes(EX_UART_NUM, str, strlen(str));
+        uart_write_string("\r\n");
+    }    
+}
+
+void gsm_write_string(const char * str){
+    uart_write_bytes(EX_UART_NUM, str, strlen(str));
+}
+
+void gsm_write_string_ln(const char * str){
+    ESP_LOGI(TAG,"To UART : %s",str);
+    uart_write_bytes(EX_UART_NUM, str, strlen(str));
+    uart_write_string("\r\n");
+}
