@@ -46,8 +46,8 @@ void AnalyseVendingCommands (char* InputVia,char* pkt) {
     }
     else if(strncmp(packets[i],"*VEND,",6)==0 && strcmp(InputVia, "MQTT") == 0)
     {
-        uart_write_string_ln(data);
-        gsm_write_string_ln(data);
+        uart_write_string_ln(packets[i]);
+        gsm_write_string_ln(packets[i]);
         DisplayCashReceived();
         vTaskDelay(3000/portTICK_PERIOD_MS);
         DisplayItemVend();
