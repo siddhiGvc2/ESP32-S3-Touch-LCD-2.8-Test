@@ -129,6 +129,22 @@ void console_uart_init(void){
     xTaskCreate(uart_event_task, "uart_event_task", 4096, NULL, 6, NULL);
 }
 
+void uart_write_number(uint8_t number){
+    char str[5];
+    if (number<10)
+    {
+         str[0] = number+'0';
+         str[1] = 0x00;
+    }   
+    uart_write_bytes(EX_UART_NUM, str, 1);
+}
+
+void uart_write_string(const char * str){
+    if (UartDebugInfoRequired)
+        uart_write_bytes(EX_UART_NUM, str, strlen(str));
+}
+
+
 void uart_write_string_ln(const char * str){
     if (UartDebugInfoRequired)
     {
