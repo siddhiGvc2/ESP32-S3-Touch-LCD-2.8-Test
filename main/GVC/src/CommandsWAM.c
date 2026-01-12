@@ -205,7 +205,7 @@ void AnalyseWAMCommands (char* InputVia,char* rx_buffer) {
             int l2 = strlen(buf);
             char b[l2+3];
             sprintf(b, "*%s#", buf);
-            tcp_ip_client_send_str(b);
+            // tcp_ip_client_send_str(b);
             // tx_event_pending = 1;
         }
        }
