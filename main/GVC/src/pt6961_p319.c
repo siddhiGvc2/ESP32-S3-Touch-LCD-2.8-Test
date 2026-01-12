@@ -95,7 +95,7 @@ void WriteSPIAddress(unsigned char val, unsigned char module)
 
 unsigned char WriteSPIByte(unsigned char val, unsigned char module)
 {
-  return 0
+  return ;
 }
 
 void Init6961 (void)

@@ -194,9 +194,8 @@ void AnalyseWAMCommands (char* InputVia,char* rx_buffer) {
         if(strcmp(InputVia, "TCP") == 0)
         {
         if(extractSubstring(rx_buffer, buf) == true){
-            uart_write_string("*");
-            uart_write_string(buf);
-            uart_write_string("#");
+           sprintf(payload, "*%s#", buf);
+           SendReply(InputVia,payload);
             // tx_event_pending = 1;
         }
        }
@@ -211,9 +210,8 @@ void AnalyseWAMCommands (char* InputVia,char* rx_buffer) {
        }
        else if(UartDebugInfo){
         if(extractSubstring(rx_buffer, buf) == true){
-            uart_write_string("*");
-            uart_write_string(buf);
-            uart_write_string("#");
+            sprintf(payload, "*%s#", buf);
+           SendReply(InputVia,payload);
             // tx_event_pending = 1;
         }
        }
