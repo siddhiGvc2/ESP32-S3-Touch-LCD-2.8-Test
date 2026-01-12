@@ -163,6 +163,7 @@ unsigned char DisplayMode;
 char QrString[500];
 int Image2BDisplayed;
 int IsMobivendApi=0;
+char val1[20], val2[20], val4[20], rawPrice[20], itemCode[10];
 
 //mobivend
 char API[100]={0};

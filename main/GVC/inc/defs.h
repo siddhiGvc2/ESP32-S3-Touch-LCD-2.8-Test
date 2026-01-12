@@ -156,3 +156,4 @@
 #define URL_CASHLESSVEND "http://snaxsmart.mobivend.in/cashlessvend/%s?spring=%s&price=%s&request=%s" // SerialNumber,spring,price,refId
 #define URL_CASHLESSSALE "http://snaxsmart.mobivend.in/CashlessSale/%s?request=%s&items=%s,%s" // SerialNumber,refId,items,spring
 
+#define MQTT_CONNEECTED 0

@@ -2,23 +2,25 @@ dependencies:
   chmorgan/esp-audio-player:
     dependencies: []
     source:
-      path: C:\Users\me\ESP32-S3-Touch-LCD-2.8-Test_GVC\components\chmorgan__esp-audio-player
+      path: 
+        E:\AllCodes\ESP32-S3-Touch-LCD-2.8-Test_GVC\components\chmorgan__esp-audio-player
       type: local
     version: 1.0.7
   chmorgan/esp-libhelix-mp3:
     dependencies: []
     source:
-      path: C:\Users\me\ESP32-S3-Touch-LCD-2.8-Test_GVC\components\chmorgan__esp-libhelix-mp3
+      path: 
+        E:\AllCodes\ESP32-S3-Touch-LCD-2.8-Test_GVC\components\chmorgan__esp-libhelix-mp3
       type: local
     version: 1.0.3
   idf:
     source:
       type: idf
-    version: 5.2.5
+    version: 5.2.6
   lvgl/lvgl:
     dependencies: []
     source:
-      path: C:\Users\me\ESP32-S3-Touch-LCD-2.8-Test_GVC\components\lvgl__lvgl
+      path: E:\AllCodes\ESP32-S3-Touch-LCD-2.8-Test_GVC\components\lvgl__lvgl
       type: local
     version: 8.3.11
 direct_dependencies:

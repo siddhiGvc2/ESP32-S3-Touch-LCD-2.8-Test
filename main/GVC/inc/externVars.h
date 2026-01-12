@@ -156,6 +156,7 @@ extern unsigned char DisplayMode;
 extern char QrString[500];
 extern int Image2BDisplayed;
 extern int IsMobivendApi;
+extern char val1[20], val2[20], val4[20], rawPrice[20], itemCode[10];
 
 //mobivend
 extern char API[100];
