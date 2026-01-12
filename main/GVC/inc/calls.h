@@ -52,3 +52,4 @@ extern void DisplayMaxLights(void);
 
 extern void DisplayOTP (void);
 extern void DisplayNormal (void);
+extern bool extractSubstring(const char* , char* );
