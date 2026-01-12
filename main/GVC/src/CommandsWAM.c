@@ -1,5 +1,11 @@
 #include "app.h"
 
+
+void UnpackGameMode (void)
+{
+    LocalGameEnable = 1;
+    GameNegativeMarking = 0;
+}
 void AnalyseWAMCommands (char* InputVia,char* rx_buffer) {
     char payload[200];
     int track_id;
