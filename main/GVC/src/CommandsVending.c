@@ -2,6 +2,7 @@
 
 #define MAX_PACKETS 10    // maximum number of packets
 #define MAX_LEN    150     // maximum length of each packet
+static const char *TAG = "VENDING";
 int split_uart_packets(char *uartpkt, char packets[MAX_PACKETS][MAX_LEN])
 {
     char *start = uartpkt;

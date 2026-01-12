@@ -154,3 +154,4 @@ extern int OTPValue;
 // vars for vending
 extern unsigned char DisplayMode; 
 extern char QrString[500];
+extern int Image2BDisplayed;

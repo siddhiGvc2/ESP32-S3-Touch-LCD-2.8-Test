@@ -161,3 +161,4 @@ int OTPValue;
 //Vending
 unsigned char DisplayMode; 
 char QrString[500];
+int Image2BDisplayed;
