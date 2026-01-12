@@ -94,3 +94,33 @@
 #define NVS_CHNL6_KEY   "CHNL6"
 #define NVS_CHNL7_KEY   "CHNL7"
      
+
+//WAM
+#define MAX_NUMBER_OF_LIGHTS 8
+#define NVS_GAME_MODE "GAMEMODE"
+#define NVS_SOUND_MODE "SOUNDMODE"
+#define NVS_MODE2_TIME "LIGHT_TIME"
+#define NVS_LIGHT_TIME "LIGHT_TIME"
+#define NVS_PLAY_TIME "PLAY_TIME"
+#define NVS_GAP_TIME "GAP_TIME"
+#define NVS_TOTAL_LIGHTS "TOTAL_LIGHTS"
+#define NVS_MAXGAMES "MAXGAMES"
+#define NVS_CURRENTCOUNT "CURRENTCOUNT"
+#define NVS_LIFECOUNT "LIFECOUNT"
+#define SettingGameMode 3
+#define MaximumGameMode 3
+
+#define SettingSoundMode 4
+#define MaximumSoundMode 2
+
+#define SettingPlayTime 5
+#define MaximumPlayTime 4
+
+#define SettingLightTime 6
+#define MaximumLightTime 5
+
+#define SettingNumberOfLights 7
+#define MaximumNumberOfLights 8
+
+#define MaximumSettingNumber 8
+

@@ -106,4 +106,46 @@ extern int track_id,Total_Tracks,CurrentTrack;
 // vars for traffic
 
 // vars for WAM
+extern int LightTime;
+extern int PlayTime;
+extern int NumberOfLights;
+extern int Ticks;
+extern unsigned int BlinlLEDTime;
+extern unsigned int OKSwitchPressedCount,NoSwitchPressedCount,WrongSwitchPressedCount;
+extern unsigned int PinPressed;
+extern bool GameOn,GameOnTimeOn;
+extern unsigned int MissedCount; 
+extern unsigned int GapBeforeNextLight;
+extern unsigned int SelectedLEDNumber;
+extern uint32_t LightOnTime,SwitchPressedTime;
+extern unsigned int TimeToRespond,TotalTimeToRespond,AverageTimeToRespond,KeysPressed;
+extern unsigned int TimeToStop,RemainingTime,Wait4NextGame;
+extern bool Mode4094;
+extern bool LeadingZeroBlank;
+extern int NumericSerialNumnber;
+extern int LocalGameEnable;
+extern int GameNegativeMarking;
+extern int GameMode;
+extern int max_count;
+extern int current_count;
+extern int life_count;
+extern int fileToBeRun=0;
+extern uint64_t current_time_us; 
+extern uint32_t elapsed_ms,last_elapsed_ms,last_audio_ms;
+extern int SoundMode;  // 0 - off, 1 - on, 2 - on with sound, 3 - on with sound and vibration                        
+extern bool NODEBUG;
 
+extern int  BTconnected;
+extern int MemorySequence[8];
+extern int GameMode2Index;
+extern int Mode2LightTime;
+extern int SettingButtonPressed;
+
+
+extern bool GameModeChanged;
+extern bool SoundModeChanged;
+extern bool PlayTimeModeChanged;
+extern bool LightTimeModeChanged;
+extern bool LightSettingModeChanged;
+
+extern int OTPValue;

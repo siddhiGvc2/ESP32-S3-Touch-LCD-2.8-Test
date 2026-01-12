@@ -113,3 +113,47 @@ int16_t chValue;
 
 // vars for WAM
 
+int LightTime;
+int PlayTime;
+int NumberOfLights;
+int Ticks = 0;
+unsigned int BlinlLEDTime;
+unsigned int OKSwitchPressedCount,NoSwitchPressedCount,WrongSwitchPressedCount;
+unsigned int PinPressed = 0;
+bool GameOn,GameOnTimeOn;
+unsigned int MissedCount = 0; 
+unsigned int GapBeforeNextLight = 7;
+unsigned int SelectedLEDNumber;
+uint32_t LightOnTime,SwitchPressedTime;
+unsigned int TimeToRespond,TotalTimeToRespond,AverageTimeToRespond,KeysPressed;
+unsigned int TimeToStop,RemainingTime,Wait4NextGame;
+bool Mode4094 = 0;
+bool LeadingZeroBlank = true;
+int NumericSerialNumnber;
+int LocalGameEnable;
+int GameNegativeMarking;
+int GameMode;
+int max_count;
+int current_count;
+int life_count;
+int fileToBeRun=0;
+uint64_t current_time_us; 
+uint32_t elapsed_ms,last_elapsed_ms,last_audio_ms;
+int SoundMode;  // 0 - off, 1 - on, 2 - on with sound, 3 - on with sound and vibration                        
+bool NODEBUG;
+
+int  BTconnected=0;
+int MemorySequence[8];
+int GameMode2Index;
+int Mode2LightTime;
+int SettingButtonPressed;
+
+
+bool GameModeChanged;
+bool SoundModeChanged;
+bool PlayTimeModeChanged;
+bool LightTimeModeChanged;
+bool LightSettingModeChanged;
+
+int OTPValue;
+
