@@ -186,18 +186,18 @@ void AnalyseWAMCommands (char* InputVia,char* rx_buffer) {
     else if(strncmp(rx_buffer,"*Mode2LT?#",10)==0)
     {
           sprintf(payload, "*Mode2LT:%d#",Mode2LightTime);
-        SendResponse(payload,InputVia); 
+        SendReply(InputVia,payload); 
     }
     else{
         int l = strlen(rx_buffer);
         char buf[l+1];
-        if(strcmp(InputVia, "TCP") == 0 && UartDebugInfo)
+        if(strcmp(InputVia, "TCP") == 0)
         {
         if(extractSubstring(rx_buffer, buf) == true){
             uart_write_string("*");
             uart_write_string(buf);
             uart_write_string("#");
-            tx_event_pending = 1;
+            // tx_event_pending = 1;
         }
        }
        else if(strcmp(InputVia, "UART") == 0){
@@ -206,7 +206,7 @@ void AnalyseWAMCommands (char* InputVia,char* rx_buffer) {
             char b[l2+3];
             sprintf(b, "*%s#", buf);
             tcp_ip_client_send_str(b);
-            tx_event_pending = 1;
+            // tx_event_pending = 1;
         }
        }
        else if(UartDebugInfo){
@@ -214,7 +214,7 @@ void AnalyseWAMCommands (char* InputVia,char* rx_buffer) {
             uart_write_string("*");
             uart_write_string(buf);
             uart_write_string("#");
-            tx_event_pending = 1;
+            // tx_event_pending = 1;
         }
        }
 
