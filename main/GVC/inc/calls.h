@@ -82,3 +82,6 @@ extern void DisplayCashlessDevice(void);
 extern void DisplayNoStock(void);
 extern void DisplayStatusText(void);
 extern void DisplayCoinInserted(void);
+
+//mobivend
+extern void start_http_get_task(const char *);

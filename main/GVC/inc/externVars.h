@@ -155,3 +155,12 @@ extern int OTPValue;
 extern unsigned char DisplayMode; 
 extern char QrString[500];
 extern int Image2BDisplayed;
+extern int IsMobivendApi;
+
+//mobivend
+extern char API[100];
+extern char price[100];
+extern char refId[100];
+
+//mqtt
+extern int MQTTRequired;

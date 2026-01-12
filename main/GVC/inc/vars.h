@@ -162,3 +162,12 @@ int OTPValue;
 unsigned char DisplayMode; 
 char QrString[500];
 int Image2BDisplayed;
+int IsMobivendApi=0;
+
+//mobivend
+char API[100]={0};
+char price[100]={0};
+char refId[100]={0};
+
+//mqtt
+int MQTTRequired;
