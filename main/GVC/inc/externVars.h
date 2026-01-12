@@ -1,6 +1,6 @@
 #include "defs.h"
 // vars for general
-extern char UartDebugInfoRequired = 0;
+extern char UartDebugInfoRequired;
 
 // vars for kwikpay 
 extern char SNdateTime[100];
