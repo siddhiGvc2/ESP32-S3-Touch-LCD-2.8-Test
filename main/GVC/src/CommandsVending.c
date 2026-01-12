@@ -1,5 +1,7 @@
 #include "app.h"
 
+#define MAX_PACKETS 10    // maximum number of packets
+#define MAX_LEN    150     // maximum length of each packet
 int split_uart_packets(char *uartpkt, char packets[MAX_PACKETS][MAX_LEN])
 {
     char *start = uartpkt;
@@ -22,7 +24,10 @@ int split_uart_packets(char *uartpkt, char packets[MAX_PACKETS][MAX_LEN])
 }
 
 void AnalyseVendingCommands (char* InputVia,char* pkt) {
-    char payload[200];
+   
+      char buf[200];
+    char buffer[1400]; 
+    char payload[440]; 
     int track_id;
     ESP_LOGI(TAG,"UART PACKET - %s",pkt);
     char packets[MAX_PACKETS][MAX_LEN];

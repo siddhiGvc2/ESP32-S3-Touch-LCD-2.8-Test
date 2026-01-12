@@ -1,6 +1,6 @@
 #include "defs.h"
 // vars for general
-
+char UartDebugInfoRequired = 0;
 char SNdateTime[100];
 char SNuserName[100];
 char URLdateTime[100];
@@ -157,3 +157,7 @@ bool LightSettingModeChanged;
 
 int OTPValue;
 
+
+//Vending
+unsigned char DisplayMode; 
+char QrString[500];

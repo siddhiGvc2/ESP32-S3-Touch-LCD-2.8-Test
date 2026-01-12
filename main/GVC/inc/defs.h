@@ -127,4 +127,17 @@
 
 //Vending
 #define NVS_QR_STRING   "QR_STRING"
+#define ModeNone   0
+#define ModeQR   1
+#define ModeNoWifi 2
+#define ModeBootingUp 3
+#define ModeServerBad 4
+#define ModeFOTA 5
+#define ModeCashReceived 6
+#define ModeSelectItem 7
+#define ModeItemVend 8
+#define ModeCashlessDevice 9
+#define ModeNoStock 10
+#define ModeStatusText 11
+#define ModeCoinInserted 12
 

@@ -1,5 +1,6 @@
 #include "defs.h"
 // vars for general
+extern char UartDebugInfoRequired = 0;
 
 // vars for kwikpay 
 extern char SNdateTime[100];
@@ -149,3 +150,7 @@ extern bool LightTimeModeChanged;
 extern bool LightSettingModeChanged;
 
 extern int OTPValue;
+
+// vars for vending
+extern unsigned char DisplayMode; 
+extern char QrString[500];

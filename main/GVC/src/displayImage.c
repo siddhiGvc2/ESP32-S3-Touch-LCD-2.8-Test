@@ -6,7 +6,7 @@ void display_images(const lv_img_dsc_t *ig) {
 }
 
 
-static lv_obj_t * img6 = NULL;
+// static lv_obj_t * img6 = NULL;
 void showLogo(void)
 {
     
