@@ -140,4 +140,16 @@
 #define ModeNoStock 10
 #define ModeStatusText 11
 #define ModeCoinInserted 12
+#define ImageBootingUp 1
+#define ImageNoWifi 2
+#define ImageCashReceived 3
+#define ImageSelectItem 4
+#define ImageItemVend 5
+#define ImageCashlessDevice 6
+#define ImageQRCode 7 
+#define ImageNoStock 8
+#define StatusText 9
+#define ImageCoinInserted 10
+
+#define QR_CODE_SIZE  198
 
