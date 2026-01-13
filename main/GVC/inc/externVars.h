@@ -1,5 +1,6 @@
 #include "defs.h"
 // vars for general
+extern int16_t server_port;
 extern char UartDebugInfoRequired;
 
 // vars for kwikpay 
@@ -165,3 +166,6 @@ extern char refId[100];
 
 //mqtt
 extern int MQTTRequired;
+
+//nvs
+extern nvs_handle_t utils_nvs_handle;

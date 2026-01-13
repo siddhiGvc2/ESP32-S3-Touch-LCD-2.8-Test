@@ -18,8 +18,6 @@ extern void AnalyseVendingCommands(char*,char*);
 extern void AnalyseWAMCommands(char*,char*);
 extern void PlayCurrentTrack();
 extern void SendReply(char*, char*);
-extern void SaveString(const char*, char*);
-extern void SaveInteger(const char*, int );
 extern void SetINHLow(void);
 extern void SetINHHigh(void);
 extern void RestartDevice(void);
@@ -85,3 +83,10 @@ extern void DisplayCoinInserted(void);
 
 //mobivend
 extern void start_http_get_task(const char *);
+
+
+//nvs
+extern void nvs_init();
+extern void SaveString(const char*, char*);
+extern void SaveInteger(const char*, int );
+extern void load_settings();

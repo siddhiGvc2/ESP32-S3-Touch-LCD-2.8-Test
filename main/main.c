@@ -8,7 +8,7 @@
 #include "PWR_Key.h"
 #include "PCM5101.h"
 #include "LVGL_Music.h"
-#include "externVars.h"
+#include "app.h"
 #include "vars.h"
 
 extern void console_uart_init(void);
@@ -35,6 +35,8 @@ void Driver_Init(void)
     PWR_Init();
     BAT_Init();
     I2C_Init();
+    nvs_init();
+    load_settings();
     PCF85063_Init();
     QMI8658_Init();
     Flash_Searching();

@@ -9,6 +9,7 @@
 #include "LVGL_Music.h"
 #include "driver/uart.h"
 #include "esp_log.h"
+#include "nvs_flash.h"
 #include "externVars.h"
 #include "calls.h"
 #include "defs.h"

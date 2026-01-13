@@ -1,5 +1,6 @@
 #include "defs.h"
 // vars for general
+int16_t server_port;
 char UartDebugInfoRequired = 0;
 char SNdateTime[100];
 char SNuserName[100];
@@ -172,3 +173,6 @@ char refId[100]={0};
 
 //mqtt
 int MQTTRequired;
+
+//nvs
+nvs_handle_t utils_nvs_handle;
