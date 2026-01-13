@@ -28,7 +28,7 @@ void AnalyseVendingCommands (char* InputVia,char* pkt) {
    
       char buf[200];
     char buffer[1400]; 
-    char payload[440]; 
+    char payload[940]; 
     int track_id;
     ESP_LOGI(TAG,"UART PACKET - %s",pkt);
     char packets[MAX_PACKETS][MAX_LEN];
