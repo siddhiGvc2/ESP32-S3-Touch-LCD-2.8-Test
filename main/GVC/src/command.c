@@ -58,7 +58,7 @@ void AnalyseGeneralCommands (char* InputVia,char* rx_buffer) {
     }
     else if(strncmp(rx_buffer,"*TCP1:",6)==0)
     {
-        sscanf(rx_buffer,"*TCP1:%s:%d#",TCP1_ip_addr,&TCP1_server_port);
+        sscanf(rx_buffer,"*TCP1:[^:]:%d#",TCP1_ip_addr,&TCP1_server_port);
         SaveString(NVS_TCP1_IP_ADDR, TCP1_ip_addr);
         SaveInteger(NVS_TCP1_SERVER_PORT, TCP1_server_port);
         ESP_LOGI(InputVia,"Set TCP1 IP Address to %s",TCP1_ip_addr);
@@ -67,7 +67,7 @@ void AnalyseGeneralCommands (char* InputVia,char* rx_buffer) {
     }
     else if(strncmp(rx_buffer,"*TCP2:",6)==0)
     {
-        sscanf(rx_buffer,"*TCP2:%s:%d#",TCP2_ip_addr,&TCP2_server_port);
+        sscanf(rx_buffer,"*TCP2:[^:]:%d#",TCP2_ip_addr,&TCP2_server_port);
         SaveString(NVS_TCP2_IP_ADDR , TCP2_ip_addr);
         SaveInteger(NVS_TCP2_SERVER_PORT, TCP2_server_port);
         ESP_LOGI(InputVia,"Set TCP2 IP Address to %s",TCP2_ip_addr);
@@ -76,7 +76,7 @@ void AnalyseGeneralCommands (char* InputVia,char* rx_buffer) {
     }
     else if(strncmp(rx_buffer,"*TCP3:",6)==0)
     {
-        sscanf(rx_buffer,"*TCP3:%s:%d#",TCP3_ip_addr,&TCP3_server_port);
+        sscanf(rx_buffer,"*TCP3:[^:]:%d#",TCP3_ip_addr,&TCP3_server_port);
         SaveString(NVS_TCP3_IP_ADDR, TCP3_ip_addr);
         SaveInteger(NVS_TCP3_SERVER_PORT, TCP3_server_port);
         ESP_LOGI(InputVia,"Set TCP3 IP Address to %s",TCP3_ip_addr);
