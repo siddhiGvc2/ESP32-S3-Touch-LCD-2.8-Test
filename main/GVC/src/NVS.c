@@ -212,6 +212,8 @@ void load_general_settings(){
     GetStrings(NVS_URL_DATETIME , URLdateTime, sizeof(URLdateTime));    
     GetStrings(NVS_SN_USERNAME , SNuserName, sizeof(SNuserName));
     GetStrings(NVS_SN_DATETIME , SNdateTime, sizeof(SNdateTime));
+    GetStrings(NVS_RST_USERNAME, RSTuserName, sizeof(RSTuserName));
+    GetStrings(NVS_RST_DATETIME, RSTdateTime,sizeof(RSTdateTime));
 
 
 }
