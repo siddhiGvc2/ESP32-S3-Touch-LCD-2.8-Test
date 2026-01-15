@@ -1,5 +1,6 @@
 #include "app.h"
 
+static const char *TAG = "HARDWARE";
 void SetINHLow(void)
 {
 
@@ -8,6 +9,12 @@ void SetINHHigh(void)
 {
 
 }
+
+void sendSocketData(void* sock, const char* data, size_t len, int flags)
+{
+
+}
+
 
 void RestartDevice(void)
 {
@@ -22,10 +29,6 @@ void RestartDevice(void)
      esp_restart();
 }
 
-void sendSocketData(void* sock, const char* data, size_t len, int flags)
-{
-
-}
 
 bool extractSubstring(const char* str, char* result) {
     const char* start = strchr(str, '*');
