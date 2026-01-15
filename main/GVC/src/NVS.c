@@ -122,7 +122,6 @@ void load_general_settings(){
     if (MipNumber == 1)
     {
         
-        // added on 090525
         strcpy(mqtt_uri, mqtt_uri1);
         strcpy(mqtt_user,mqtt_user1);
         strcpy(mqtt_pass,mqtt_pass1);
@@ -131,7 +130,6 @@ void load_general_settings(){
     if (MipNumber == 2)
     {
       
-        // added on 090525
         strcpy(mqtt_uri, mqtt_uri2);
         strcpy(mqtt_user,mqtt_user2);
         strcpy(mqtt_pass,mqtt_pass2);
@@ -140,7 +138,6 @@ void load_general_settings(){
     if (MipNumber == 3)
     {
        
-        // added on 090525
         strcpy(mqtt_uri, mqtt_uri3);
          strcpy(mqtt_user,mqtt_user3);
         strcpy(mqtt_pass,mqtt_pass3);
@@ -222,6 +219,7 @@ void load_general_settings(){
 
 void load_settings()
 {
-    ESP_LOGI(TAG, "Loading Settings from NVS");
+  ESP_LOGI(TAG, "Loading Settings from NVS");
   load_general_settings();
+  load_kwikpay_settings();
 }

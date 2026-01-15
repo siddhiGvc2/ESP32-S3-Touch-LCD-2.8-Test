@@ -89,4 +89,7 @@ extern void start_http_get_task(const char *);
 extern void nvs_init();
 extern void SaveString(const char*, char*);
 extern void SaveInteger(const char*, int );
+extern esp_err_t GetStrings(const char*, char*, size_t);
+extern esp_err_t GetInteger(const char*, int16_t*);
 extern void load_settings();
+extern void load_kwikpay_settings();

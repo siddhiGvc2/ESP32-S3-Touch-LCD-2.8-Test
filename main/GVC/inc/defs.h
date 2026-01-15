@@ -87,6 +87,8 @@
 
 
 // kwikpay Defs
+
+#define PASS_THRU   "Y"
 #define NUM_CHANNELS 7
 #define MAXSIPNUMBER 3
 #define MAXMIPNUMBER 3
