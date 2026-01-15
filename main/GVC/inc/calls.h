@@ -95,3 +95,4 @@ extern esp_err_t GetInteger(const char*, int16_t*);
 extern void load_settings();
 extern void load_kwikpay_settings();
 extern void load_wam_settings();
+extern void load_vendings_settings();

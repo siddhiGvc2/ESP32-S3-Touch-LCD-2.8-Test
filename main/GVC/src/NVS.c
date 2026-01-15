@@ -225,4 +225,5 @@ void load_settings()
   load_general_settings();
   load_kwikpay_settings();
   load_wam_settings();
+  load_vendings_settings();
 }
