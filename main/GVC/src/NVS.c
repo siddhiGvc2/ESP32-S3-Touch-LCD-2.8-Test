@@ -224,4 +224,5 @@ void load_settings()
   ESP_LOGI(TAG, "Loading Settings from NVS");
   load_general_settings();
   load_kwikpay_settings();
+  load_wam_settings();
 }

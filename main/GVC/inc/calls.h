@@ -62,6 +62,7 @@ extern void DisplayMaxLights(void);
 extern void DisplayOTP (void);
 extern void DisplayNormal (void);
 extern bool extractSubstring(const char* , char* );
+extern void UnpackGameMode (void);
 
 
 //mqtt
@@ -93,3 +94,4 @@ extern esp_err_t GetStrings(const char*, char*, size_t);
 extern esp_err_t GetInteger(const char*, int16_t*);
 extern void load_settings();
 extern void load_kwikpay_settings();
+extern void load_wam_settings();

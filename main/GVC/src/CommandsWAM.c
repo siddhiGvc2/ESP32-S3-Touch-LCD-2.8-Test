@@ -6,11 +6,15 @@ void UnpackGameMode (void)
     LocalGameEnable = 1;
     GameNegativeMarking = 0;
 }
+
+
+
 void AnalyseWAMCommands (char* InputVia,char* rx_buffer) {
     char payload[200];
     int track_id;
     if(strncmp(rx_buffer,"*LTime:",7)==0)
     {
+
         sscanf(rx_buffer, "*LTime:%d#",&LightTime);
         SaveInteger(NVS_LIGHT_TIME,LightTime);
         sprintf(payload, "*LTime-OK,%d#",LightTime);
@@ -109,7 +113,7 @@ void AnalyseWAMCommands (char* InputVia,char* rx_buffer) {
         life_count=max_count;
         SaveInteger(NVS_CURRENTCOUNT,current_count);
         SaveInteger(NVS_LIFECOUNT,life_count);
-          sprintf(payload, "*RESET-COUNT-OK#");
+        sprintf(payload, "*RESET-COUNT-OK#");
         SendReply(InputVia,payload); 
       
 
