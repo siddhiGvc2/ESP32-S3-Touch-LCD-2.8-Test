@@ -11,5 +11,6 @@
 #include "esp_log.h"
 #include "nvs_flash.h"
 #include "externVars.h"
+#include "esp_system.h"
 #include "calls.h"
 #include "defs.h"
