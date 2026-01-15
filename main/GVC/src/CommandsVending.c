@@ -24,9 +24,10 @@ int split_uart_packets(char *uartpkt, char packets[MAX_PACKETS][MAX_LEN])
     return count;  // return number of packets found
 }
 
+
 void AnalyseVendingCommands (char* InputVia,char* pkt) {
    
-      char buf[200];
+    char buf[200];
     char buffer[1400]; 
     char payload[940]; 
     int track_id;
@@ -214,7 +215,7 @@ void AnalyseVendingCommands (char* InputVia,char* pkt) {
             DisplayMode=ModeNone;
             dispayQR();
             if (UartDebugInfoRequired){
-            uart_write_string_ln(payload);
+             uart_write_string_ln(payload);
             }
         }
         else if(strncmp(packets[i], "*QR?#",5) == 0){
