@@ -59,6 +59,8 @@ void nvs_init(){
 
 
 void load_general_settings(){
+
+    ESP_LOGI(TAG, "Loading General Settings from NVS");
   
     if(GetStrings(NVS_TCP1_IP_ADDR , TCP1_ip_addr, sizeof(TCP1_ip_addr)) != ESP_OK){
         strcpy(TCP1_ip_addr, TCP_URL1);
@@ -215,5 +217,6 @@ void load_general_settings(){
 
 void load_settings()
 {
+    ESP_LOGI(TAG, "Loading Settings from NVS");
   load_general_settings();
 }
