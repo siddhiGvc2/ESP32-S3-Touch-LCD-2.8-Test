@@ -9,7 +9,33 @@
 #define MKM_IC_UART_RX 44
 
 
-//generaal
+//general
+#define DEFAULT_SSID1  "GVCSYS1"
+#define DEFAULT_PASS1  "GVC3065V"
+#define DEFAULT_SSID2  "GVCSYS2"
+#define DEFAULT_PASS2  "GVC3065V"
+#define DEFAULT_SSID3  "GVCSYS3"
+#define DEFAULT_PASS3  "GVC3065V"
+
+#define TCP_URL1  "GVCTCP.KWIKPAY.COM"
+#define TCP_URL2  "TESTTCP.KWIKPAY.COM"
+#define TCP_URL3  "TCP.KWIKPAY.COM"
+#define TCP_PORT1   6666
+#define TCP_PORT2   6666
+#define TCP_PORT3   6666
+
+#define MQTT_BROKER1  "mqtt://snackboss-iot.in:1883"
+#define MQTT_BROKER2  "mqtt://157.245.29.144:1883"
+#define MQTT_BROKER3  "mqtt://159.89.248.57:1883"
+
+#define MQTT_USER1  "gvcMqttServer"
+#define MQTT_USER2  "kpmqtt"
+#define MQTT_USER3  "kpmqtt"
+
+#define MQTT_PASS1  "gvcMqttServer"
+#define MQTT_PASS2  "KP*sandbox@101PW"
+#define MQTT_PASS3  "KP*tcpeash?101PW"
+
 #define NVS_UNIX_TS   "UNIX_TS"
 #define NVS_URL_USERNAME     "USERNAME_URL"
 #define NVS_URL_DATETIME   "DATETIME_URL"

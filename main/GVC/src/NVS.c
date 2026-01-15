@@ -60,29 +60,57 @@ void nvs_init(){
 
 void load_general_settings(){
   
-    GetStrings(NVS_TCP1_IP_ADDR , TCP1_ip_addr, sizeof(TCP1_ip_addr));
-    GetInteger(NVS_TCP1_SERVER_PORT, &TCP1_server_port);
-    GetStrings(NVS_TCP2_IP_ADDR , TCP2_ip_addr, sizeof(TCP2_ip_addr));
-    GetInteger(NVS_TCP2_SERVER_PORT, &TCP2_server_port);
-    GetStrings(NVS_TCP3_IP_ADDR , TCP3_ip_addr, sizeof(TCP3_ip_addr));
-    GetInteger(NVS_TCP3_SERVER_PORT, &TCP3_server_port);
-
-    GetStrings(NVS_MQTT1_URI , mqtt_uri1, sizeof(mqtt_uri1));
-    GetStrings(NVS_MQTT1_USER , mqtt_user1, sizeof(mqtt_user1));
-    GetStrings(NVS_MQTT1_PASS , mqtt_pass1, sizeof(mqtt_pass1));
-    GetStrings(NVS_MQTT2_URI , mqtt_uri2, sizeof(mqtt_uri2));
-    GetStrings(NVS_MQTT2_USER , mqtt_user2, sizeof(mqtt_user2));
-    GetStrings(NVS_MQTT2_PASS , mqtt_pass2, sizeof(mqtt_pass2));
-
-    GetInteger(NVS_MIP_NUMBER, &MipNumber);
-    if(GetInteger(NVS_MIP_NUMBER,&MipNumber) == ESP_OK){
-       GetInteger(NVS_MIP_NUMBER,&MipNumber);
+    if(GetStrings(NVS_TCP1_IP_ADDR , TCP1_ip_addr, sizeof(TCP1_ip_addr)) != ESP_OK){
+        strcpy(TCP1_ip_addr, TCP_URL1);
     }
-    else {
+
+    if(GetInteger(NVS_TCP1_SERVER_PORT, &TCP1_server_port) != ESP_OK){
+        TCP1_server_port = TCP_PORT1;
+    }
+
+    if(GetStrings(NVS_TCP2_IP_ADDR , TCP2_ip_addr, sizeof(TCP2_ip_addr)) != ESP_OK){
+        strcpy(TCP2_ip_addr, TCP_URL2);
+    }
+
+    if(GetInteger(NVS_TCP2_SERVER_PORT, &TCP2_server_port) != ESP_OK){
+        TCP2_server_port = TCP_PORT2;
+    }
+
+    if(GetStrings(NVS_TCP3_IP_ADDR , TCP3_ip_addr, sizeof(TCP3_ip_addr)) != ESP_OK){
+        strcpy(TCP3_ip_addr, TCP_URL3);
+    }
+
+    if(GetInteger(NVS_TCP3_SERVER_PORT, &TCP3_server_port) != ESP_OK){
+        TCP3_server_port = TCP_PORT3;
+    }
+
+    if(GetStrings(NVS_MQTT1_URI , mqtt_uri1, sizeof(mqtt_uri1)) != ESP_OK){ 
+        strcpy(mqtt_uri1, MQTT_BROKER1);
+    }
+
+    if(GetStrings(NVS_MQTT1_USER , mqtt_user1, sizeof(mqtt_user1)) != ESP_OK){
+        strcpy(mqtt_user1, MQTT_USER1);
+    }
+    if(GetStrings(NVS_MQTT1_PASS , mqtt_pass1, sizeof(mqtt_pass1)) != ESP_OK){
+        strcpy(mqtt_pass1, MQTT_PASS1);
+    }
+    if(GetStrings(NVS_MQTT2_URI , mqtt_uri2, sizeof(mqtt_uri2)) != ESP_OK){
+        strcpy(mqtt_uri2, MQTT_BROKER2);
+    }
+    if(GetStrings(NVS_MQTT2_USER , mqtt_user2, sizeof(mqtt_user2)) != ESP_OK){
+        strcpy(mqtt_user2, MQTT_USER2);
+    }
+    if(GetStrings(NVS_MQTT2_PASS , mqtt_pass2, sizeof(mqtt_pass2)) != ESP_OK){
+        strcpy(mqtt_pass2, MQTT_PASS2);
+    }
+    if (GetInteger(NVS_MIP_NUMBER, &MipNumber) != ESP_OK) {
         MipNumber = 1;
     }
-     if ((MipNumber == 0) || (MipNumber > MAXMIPNUMBER))
+
+    if (MipNumber == 0 || MipNumber > MAXMIPNUMBER) {
         MipNumber = 1;
+    }
+
 
     if (MipNumber == 1)
     {
@@ -112,12 +140,11 @@ void load_general_settings(){
        
     }
     
-    if(GetInteger(NVS_SIP_NUMBER,&SipNumber) == ESP_OK){
-       GetInteger(NVS_SIP_NUMBER,&SipNumber);
+    if(GetInteger(NVS_SIP_NUMBER,&SipNumber) != ESP_OK){
+       SipNumber = 1;
     }
-    else {
-        SipNumber = 1;
-    }
+   
+
      if ((SipNumber == 0) || (SipNumber > MAXSIPNUMBER))
         SipNumber = 1;
 
@@ -142,12 +169,24 @@ void load_general_settings(){
     }
  
 
-    GetStrings(NVS_SSID_1_KEY , WIFI_SSID_1, sizeof(WIFI_SSID_1));
-    GetStrings(NVS_PASS_1_KEY , WIFI_PASS_1, sizeof(WIFI_PASS_1));
-    GetStrings(NVS_SSID_2_KEY , WIFI_SSID_2, sizeof(WIFI_SSID_2));
-    GetStrings(NVS_PASS_2_KEY , WIFI_PASS_2, sizeof(WIFI_PASS_2));
-    GetStrings(NVS_SSID_3_KEY , WIFI_SSID_3, sizeof(WIFI_SSID_3));
-    GetStrings(NVS_PASS_3_KEY , WIFI_PASS_3, sizeof(WIFI_PASS_3));
+    if(GetStrings(NVS_SSID_1_KEY , WIFI_SSID_1, sizeof(WIFI_SSID_1)) != ESP_OK){
+        strcpy(WIFI_SSID_1, DEFAULT_SSID1);
+    }
+    if(GetStrings(NVS_PASS_1_KEY , WIFI_PASS_1, sizeof(WIFI_PASS_1)) != ESP_OK){
+        strcpy(WIFI_PASS_1, DEFAULT_PASS2);
+    }
+    if(GetStrings(NVS_SSID_2_KEY , WIFI_SSID_2, sizeof(WIFI_SSID_2)) != ESP_OK){
+        strcpy(WIFI_SSID_2, DEFAULT_SSID2);
+    }
+    if(GetStrings(NVS_PASS_2_KEY , WIFI_PASS_2, sizeof(WIFI_PASS_2)) != ESP_OK){
+        strcpy(WIFI_PASS_2, DEFAULT_PASS2);
+    }
+    if(GetStrings(NVS_SSID_3_KEY , WIFI_SSID_3, sizeof(WIFI_SSID_3)) != ESP_OK){
+        strcpy(WIFI_SSID_3, DEFAULT_SSID3);
+    }
+    if(GetStrings(NVS_PASS_3_KEY , WIFI_PASS_3, sizeof(WIFI_PASS_3)) != ESP_OK){
+        strcpy(WIFI_PASS_3, DEFAULT_PASS3);
+    }
 
 
     GetStrings(NVS_SERIAL_NUMBER , SerialNumber, sizeof(SerialNumber));
